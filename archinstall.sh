@@ -12,6 +12,7 @@ username=user1
 userpasswd=0000
 rootpasswd=0000
 
+set -x
 
 #create partitions
 parted -s "$targetdev" mklabel gpt
@@ -32,6 +33,7 @@ mount --mkdir "$targetdev$efipartnum" /mnt/boot
 swapon "$targetdev$swappartnum"
 
 #setup linux on the root partition
+pacman -Sy archlinux-keyring --noconfirm
 pacstrap -K /mnt base linux linux-firmware
 genfstab -U /mnt >> /mnt/etc/fstab
 

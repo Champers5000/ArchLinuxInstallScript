@@ -72,7 +72,6 @@ systemctl enable sddm
 systemctl enable bluetooth.service
 systemctl enable sshd.service
 systemctl enable cups.service
-systemctl enable pipewire-pulse.service
 
 sudo su "$username"
 #setup yay in user directory

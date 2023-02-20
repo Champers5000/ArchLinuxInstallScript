@@ -64,7 +64,7 @@ sed -i 's/# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL' /etc/sudoers
 
 #kde
 pacman -S networkmanager xorg sddm  base-devel --noconfirm
-pacman -S plasma konsole dolphin ark kate spectacle krunner partitionmanager alsa-utils bluez bluez-utils pipewire-pulse cups latte-dock libreoffice-fresh --noconfirm
+pacman -S plasma konsole dolphin ark kate spectacle krunner partitionmanager alsa-utils bluez bluez-utils pipewire-pulse cups print-manager latte-dock libreoffice-fresh --noconfirm
 pacman -S firefox openssh vlc git --noconfirm
 
 systemctl enable NetworkManager

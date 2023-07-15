@@ -62,11 +62,11 @@ usermod -aG wheel "$username"
 sed -i 's/# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL' /etc/sudoers
 
 #basic utilites
-pacman -S base-devel git exfat-utils ntfs-3g openssh --noconfirm
+pacman -S base-devel git exfat-utils ntfs-3g udftools openssh --noconfirm
 
 #kde
 pacman -S xorg sddm --noconfirm #basics for graphics
-pacman -S plasma konsole dolphin ark kate spectacle krunner partitionmanager alsa-utils bluez bluez-utils pipewire-pulse cups print-manager networkmanager --noconfirm #plasma packages
+pacman -S plasma konsole dolphin ark kate spectacle krunner partitionmanager alsa-utils bluez bluez-utils pipewire-pulse cups print-manager networkmanager gwenview qt5-imageformats --noconfirm #plasma packages
 pacman -S firefox vlc latte-dock libreoffice-fresh --noconfirm #applications
 
 systemctl enable NetworkManager

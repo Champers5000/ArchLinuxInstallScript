@@ -59,7 +59,7 @@ useradd -m "$username"
 echo "$username:$userpasswd" | chpasswd
 usermod -aG wheel "$username"
 #setup sudo
-sed -i 's/# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL' /etc/sudoers
+sed -i 's/# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL/' /etc/sudoers
 
 #basic utilites
 pacman -S base-devel git exfat-utils ntfs-3g udftools openssh --noconfirm

@@ -61,11 +61,13 @@ usermod -aG wheel "$username"
 #setup sudo
 sed -i 's/# %wheel ALL=(ALL:ALL) ALL/%wheel ALL=(ALL:ALL) ALL' /etc/sudoers
 
+#basic utilites
+pacman -S base-devel git exfat-utils ntfs-3g openssh --noconfirm
 
 #kde
-pacman -S networkmanager xorg sddm  base-devel --noconfirm
-pacman -S plasma konsole dolphin ark kate spectacle krunner partitionmanager alsa-utils bluez bluez-utils pipewire-pulse cups print-manager latte-dock libreoffice-fresh --noconfirm
-pacman -S firefox openssh vlc git --noconfirm
+pacman -S xorg sddm --noconfirm #basics for graphics
+pacman -S plasma konsole dolphin ark kate spectacle krunner partitionmanager alsa-utils bluez bluez-utils pipewire-pulse cups print-manager networkmanager --noconfirm #plasma packages
+pacman -S firefox vlc latte-dock libreoffice-fresh --noconfirm #applications
 
 systemctl enable NetworkManager
 systemctl enable sddm

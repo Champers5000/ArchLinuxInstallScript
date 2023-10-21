@@ -32,6 +32,10 @@ mount "$targetdev$rootpartnum" /mnt
 mount --mkdir "$targetdev$efipartnum" /mnt/boot
 swapon "$targetdev$swappartnum"
 
+#setup pacman
+pacman-key --init
+pacman-key --populate archlinux
+
 #setup linux on the root partition
 pacman -Sy archlinux-keyring --noconfirm
 pacstrap -K /mnt base linux linux-firmware
